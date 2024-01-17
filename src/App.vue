@@ -4,12 +4,11 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink> | 
-        <RouterLink to="/about">About</RouterLink>
+    <nav>
+        <RouterLink :to="{ name: 'home' }">Home</RouterLink>
+        <RouterLink :to="{ name: 'my-list' }">My List</RouterLink>
+        <RouterLink :to="{ name: 'profile' }">Profile</RouterLink>
       </nav>
-    </div>
   </header>
   <RouterView />
 </template>
@@ -18,6 +17,7 @@ import { RouterLink, RouterView } from 'vue-router'
 header {
   line-height: 1.5;
 }
+
 
 nav {
   display: flex;
@@ -49,11 +49,6 @@ nav a:first-of-type {
   header {
     display: flex;
     place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
   }
 
   header .wrapper {
@@ -64,9 +59,7 @@ nav a:first-of-type {
 
   nav {
     text-align: left;
-    margin-left: -1rem;
     font-size: 1rem;
-
     padding: 1rem 0;
     margin-top: 1rem;
   }
