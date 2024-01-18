@@ -3,14 +3,22 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
-    <nav>
+  <v-app>
+    <v-navigation-drawer>
+      <v-list-item title="My Application" subtitle="Vuetify"></v-list-item>
+      <v-divider></v-divider>
+      <v-list-item link title="List Item 1">
         <RouterLink :to="{ name: 'home' }">Home</RouterLink>
+      </v-list-item>
+      <v-list-item link title="List Item 2">
         <RouterLink :to="{ name: 'my-list' }">My List</RouterLink>
+      </v-list-item>
+      <v-list-item link title="List Item 3">
         <RouterLink :to="{ name: 'profile' }">Profile</RouterLink>
-      </nav>
-  </header>
-  <RouterView />
+      </v-list-item>
+    </v-navigation-drawer>
+    <RouterView />
+  </v-app>
 </template>
 
 <style scoped>
