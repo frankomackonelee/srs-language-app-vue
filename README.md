@@ -1,6 +1,8 @@
 # srs-language-app-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+This is a practice project to learn various aspects of the Vue ecosystem.
+This includes:
+- Vuetify as a component library
 [See the deployed web app here](https://srs-language-app-vue.onrender.com/)
 
 ## Recommended IDE Setup
@@ -54,4 +56,4 @@ npm run lint
 
 ### Deploy
 
-Push to main, and [Render.com](https://dashboard.render.com/static/srv-cmjvthud3nmc73cmj4l0) will automatically deploy the application
+Push to main branch in the bitbucket repo, and [Render.com](https://dashboard.render.com/static/srv-cmjvthud3nmc73cmj4l0) will automatically deploy the application

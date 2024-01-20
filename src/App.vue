@@ -1,22 +1,43 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import { ref } from 'vue';
+const links = ref([
+  {
+    title: "Home",
+    to: { name: 'home' }
+  },
+  {
+    title: "My List",
+    to: { name: 'my-list' }
+  },
+  {
+    title: "Profile",
+    to: { name: 'profile' }
+  }
+])
+const isOpen = ref<boolean>(true);
+
 </script>
 
 <template>
   <v-app>
-    <v-navigation-drawer>
-      <v-list-item title="My Application" subtitle="Vuetify"></v-list-item>
-      <v-divider></v-divider>
-      <v-list-item link title="List Item 1">
-        <RouterLink :to="{ name: 'home' }">Home</RouterLink>
-      </v-list-item>
-      <v-list-item link title="List Item 2">
-        <RouterLink :to="{ name: 'my-list' }">My List</RouterLink>
-      </v-list-item>
-      <v-list-item link title="List Item 3">
-        <RouterLink :to="{ name: 'profile' }">Profile</RouterLink>
-      </v-list-item>
+    <v-navigation-drawer v-model="isOpen">
+      <v-list>
+        <v-list-group>
+
+          <v-list-item title="My Application" subtitle="Vuetify"></v-list-item>
+
+          <v-divider></v-divider>
+
+          <v-list-item v-for="(item, index) in links" link :index="index" :title="item.title" :to="item.to">
+          </v-list-item>
+
+        </v-list-group>
+      </v-list>
     </v-navigation-drawer>
+
+    <v-btn @click="isOpen = !isOpen" density="compact">Open Close</v-btn>
+
     <RouterView />
   </v-app>
 </template>
@@ -26,6 +47,9 @@ header {
   line-height: 1.5;
 }
 
+a.v-list-item{
+  display: block;
+}
 
 nav {
   display: flex;
