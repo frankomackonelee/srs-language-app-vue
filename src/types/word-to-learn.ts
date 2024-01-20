@@ -1,0 +1,1 @@
+export type WordToLearn = { english: string, spanish: string }
