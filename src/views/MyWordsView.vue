@@ -11,22 +11,20 @@ const myWords = ref<(WordToLearn&Entity)[]>([{
     english: "to lick",
     spanish: "lamer"
 }]);
+function doThis(spanish: string){
+    console.log("TODO: navigate to: " + spanish)
+}
 </script>
 
 <template>
     <main>
       <h1>My List of Words</h1>
-      <ul>
-        <li v-for="({english, spanish}, id) of myWords" :key="id">
-            <div>English: {{ english }}</div>
-            <div>Spanish: {{ spanish }}</div>
-        </li>
-      </ul>
+      <v-card>
+        <v-list linse="two">
+            <v-list-item v-for="({english, spanish}, id) of myWords" :key="id" :title="spanish" :subtitle="english" @click="doThis(spanish)"
+            >
+            </v-list-item>
+        </v-list>
+      </v-card>
     </main>
 </template>
-
-<style>
-ul li{
-    padding-top: 10px;
-}
-</style>

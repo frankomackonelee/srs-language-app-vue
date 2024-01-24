@@ -12,39 +12,44 @@ const profile = ref<Profile>({
 
 <template>
   <main>
-    <v-sheet>
-      <v-table>
-              <tbody>
-                <tr align="right">
-                  <th>Name</th>
-                  <td>{{ profile.firstName }}</td>
-                </tr>
+    <v-card>
+      <v-sheet>
+        <v-table>
+                <tbody>
+                  <tr align="right">
+                    <th>Name</th>
+                    <td>{{ profile.firstName }}</td>
+                  </tr>
 
-                <tr align="right">
-                  <th>Surname</th>
-                  <td>{{ profile.lastName }}</td>
-                </tr>
+                  <tr align="right">
+                    <th>Surname</th>
+                    <td>{{ profile.lastName }}</td>
+                  </tr>
 
-                <tr align="right">
-                  <th>Email</th>
-                  <td>{{ profile.email }}</td>
-                </tr>
+                  <tr align="right">
+                    <th>Email</th>
+                    <td>{{ profile.email }}</td>
+                  </tr>
 
-                <tr align="right">
-                  <th>Native Language</th>
-                  <td>{{ profile.languageMedium }}</td>
-                </tr>
+                  <tr align="right">
+                    <th>Native Language</th>
+                    <td>{{ profile.languageMedium }}</td>
+                  </tr>
 
-                <tr align="right">
-                  <th>Target Language</th>
-                  <td>{{ profile.languageTarget }}</td>
-                </tr>
-              </tbody>
-            </v-table>
-    </v-sheet>
+                  <tr align="right">
+                    <th>Target Language</th>
+                    <td>{{ profile.languageTarget }}</td>
+                  </tr>
+                </tbody>
+              </v-table>
+        </v-sheet>
+    </v-card>
+
   </main>
 </template>
 
 <style scoped>
-
+.v-card{
+  margin: 10px;
+}
 </style>

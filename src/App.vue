@@ -91,4 +91,7 @@ const isOpen = ref<boolean>(true);
 main{
   margin-top: 48px;
 }
+main .v-card{
+  margin: 10px;
+}
 </style>
